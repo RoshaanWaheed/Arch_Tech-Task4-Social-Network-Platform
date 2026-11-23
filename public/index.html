@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arch Circle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="auth" hidden>
+    <div class="auth-card">
+      <h1>Arch Circle</h1>
+      <p class="muted">Social Networking Platform</p>
+      <div class="tabs" role="tablist">
+        <button class="tab on" data-mode="login" type="button">Sign in</button>
+        <button class="tab" data-mode="register" type="button">Create account</button>
+      </div>
+      <form id="auth-form">
+        <label class="reg-only">Full name<input name="name" autocomplete="name" maxlength="60"></label>
+        <label>Username<input name="username" autocomplete="username" required minlength="3" maxlength="20" pattern="[A-Za-z0-9_]+"></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required minlength="6"></label>
+        <p class="error" id="auth-error" role="alert"></p>
+        <button class="btn primary" id="auth-submit">Sign in</button>
+      </form>
+    </div>
+  </section>
+
+  <div id="app" hidden>
+    <nav id="nav"></nav>
+    <main id="view"></main>
+  </div>
+  <div id="toasts" aria-live="polite"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
